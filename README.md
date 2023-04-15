@@ -8,7 +8,7 @@ git clone https://github.com/shofique21/paysera.git
 <br/>another new terminal command: npm run dev
 <br/>another new terminal
 <br/>php artisan migrate
-<br/>php artian db:seed
+<br/>php artisan db:seed
 
 <br/>php artisan optimize
 <br/>php artisan cache:clear
