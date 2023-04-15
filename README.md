@@ -1,7 +1,7 @@
 git clone https://github.com/shofique21/paysera.git
 <br/>create .env file in root folder
 <br/>copy .env.example and paste in .env
-<br/>create MySQL database
+<br/>create MySQL database:paysera
 <br/>composer install
 <br/>php artisan key:generate
 <br/>npm install
@@ -16,6 +16,7 @@ git clone https://github.com/shofique21/paysera.git
 <br/>php artisan route:cache
 <br/>php artisan route:clear
 <br/>php artisan config:clear
+URL:: http://127.0.0.1:8000/
 <br/>login credential
 <br/>email:admin@paysera.com
 <br/>password:Admin123
