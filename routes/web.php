@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +29,6 @@ Route::get('/all-transaction', [App\Http\Controllers\TransactionController::clas
 Route::get('/all-withdraw-transaction', [App\Http\Controllers\TransactionController::class, 'withdrawTransaction'])->name('withdrawtransaction');
 Route::get('/all-deposit-transaction', [App\Http\Controllers\TransactionController::class, 'depositTransaction'])->name('depositetransaction');
 
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::controller(TransactionController::class)->group(function(){
+    Route::post('transaction-import', 'import')->name('transactions.import');
+});
