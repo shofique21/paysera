@@ -18,7 +18,7 @@ class TransactonTableSeeder extends Seeder
             [
                 'identity_number' => '34201',
                 'operations_date' => $date,
-                'account_type' => 'Private',
+                'account_type' => 'private',
                 'operation_type' => 'deposit',
                 'operation_amount' => '20000',
                 'commission_amount' => '20',
@@ -30,7 +30,7 @@ class TransactonTableSeeder extends Seeder
             [
                 'identity_number' => '34202',
                 'operations_date' => $date,
-                'account_type' => 'Business',
+                'account_type' => 'business',
                 'operation_type' => 'deposit',
                 'operation_amount' => '15000',
                 'commission_amount' => '15',
@@ -42,7 +42,7 @@ class TransactonTableSeeder extends Seeder
             [
                 'identity_number' => '34203',
                 'operations_date' => $date,
-                'account_type' => 'Business',
+                'account_type' => 'business',
                 'operation_type' => 'withdraw',
                 'operation_amount' => '10000',
                 'commission_amount' => '10',

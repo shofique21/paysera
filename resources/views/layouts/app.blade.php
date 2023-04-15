@@ -58,7 +58,7 @@
                         @else
                         
                         <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ __('Create Accounts') }}</a>
+                                    <a class="nav-link" href="{{ route('accounts.create') }}">{{ __('Create Accounts') }}</a>
                         </li>
                         <li class="nav-item">
                                     <a class="nav-link" href="#">{{ __('Create Transaction') }}</a>
@@ -86,7 +86,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{URL::route('allaccounts')}}">
+                                    <a class="dropdown-item" href="{{ route('accounts.index') }}">
                                         {{ __('All Accounts') }}
                                     </a>
                                     <a class="dropdown-item" href="{{URL::route('privateaccounts')}}">
@@ -106,7 +106,7 @@
                                 <a class="dropdown-item" href="{{URL::route('allcurrency')}}">
                                         {{ __('All Currency') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{URL::route('allaccounts')}}">
+                                    <a class="dropdown-item" href="{{URL::route('accounts.create')}}">
                                         {{ __('Create Currency') }}
                                     </a>
                                 </div>

@@ -23,5 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TransactonTableSeeder::class);
         $this->call(AdminAccountTableSeeder::class);
         $this->call(CurrencyTableSeeder::class);
+        $this->call(AccountTypeTableSeeder::class);
+        $this->call(OperationTypeTableSeeder::class);
     }
 }
