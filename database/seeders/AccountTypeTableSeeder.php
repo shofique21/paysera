@@ -15,10 +15,12 @@ class AccountTypeTableSeeder extends Seeder
     {
         AccountType::create([
             'name' => 'private',
+            'description' => 'Personal private account',
         ]);
         AccountType::create(
             [
                 'name' => 'business',
+                'description' => 'Business account for trademarks',
             ]
         );
     }
