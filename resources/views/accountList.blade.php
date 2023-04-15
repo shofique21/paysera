@@ -36,7 +36,7 @@
                                 <td>{{ $user->account_type}}</td>
                                 <td>{{ $user->balance}}</td>
                                 <td>{{ $user->status}}</td>
-                                <td>{{ 'Details'}}</td>
+                                <td><a href="{{ route('accounts.show',$user->id) }}"> {{'Details'}}</a></td>
                             </tr>
                             @endforeach
                         </tbody>
