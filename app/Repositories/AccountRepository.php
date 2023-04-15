@@ -26,7 +26,19 @@ class AccountRepository implements AccountRepositoryInterface
     {
         $account = AccountUser::where('id', $id)->first();
         $account->name = $data['name'];
-        $account->slug = $data['slug'];
+        $account->email = $data['email'];
+        $account->phone = $data['phone'];
+        $account->street = $data['street'];
+        $account->state = $data['state'];
+        $account->postCode = $data['postCode'];
+        $account->country = $data['country'];
+        $account->profession = $data['profession'];
+        $account->date_of_birth = $data['date_of_birth'];
+        $account->account_type = $data['account_type'];
+        $account->pinCode = $data['pinCode'];
+        $account->balance = $data['balance'];
+        $account->currency = $data['currency'];
+        $account->status = $data['status'];
         $account->save();
     }
 

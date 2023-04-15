@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AccountUser;
-use Illuminate\Http\Request;
 use App\Models\AccountType;
 use App\Models\Currency;
+use Illuminate\Http\Request;
 use App\Repositories\Interfaces\AccountRepositoryInterface;
 
 class AccountController extends Controller
@@ -38,7 +38,21 @@ class AccountController extends Controller
         $this->accountRepository->storeAccount($data);
         return redirect()->route('accounts.index')->with('success', 'Account Created Successfully');
     }
-
+ 
+    public function show($id){
+        $accountType = AccountType::all();
+        $currencies = Currency::all();
+        $accountDtails = $this->accountRepository->findAccount($id);
+        return view('accountDetails', compact('accountDtails','accountType', 'currencies'));
+    }
+    public function update(Request $request, $id){
+        $data = $request->all();
+        if($request->pinCode != null){
+          $data['pinCode'] = bcrypt($request->pinCode);
+        }
+        $this->accountRepository->updateAccount($data,$id);
+        return redirect()->route('accounts.index')->with('success', 'Account Updated Successfully');
+    }
     public function private_account()
     {
         $privateAccount = AccountUser::where('account_type', 'private')->get();
