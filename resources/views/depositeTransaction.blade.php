@@ -5,10 +5,22 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Dashboard') }}
+                    <form action="{{ route('transactions.import') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="file" class="form-control">
+                        <br>
+                        <button class="btn btn-success">Import Transaction Data</button>
+                    </form>
+                </div>
 
                 <div class="card-body">
-                    <h1>All Transaction</h1>
+                    @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+                    <h1>All Deposit Transaction</h1>
                     <table class="table table-striped">
                         <thead>
                             <tr>
