@@ -3,6 +3,7 @@ git clone https://github.com/shofique21/paysera.git
 <br/>copy .env.example and paste in .env
 <br/>create MySQL database
 <br/>composer install
+<br/>php artisan key:generate
 <br/>npm install
 <br/>php artisan serve
 <br/>another new terminal command: npm run dev
