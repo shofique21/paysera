@@ -17,9 +17,9 @@ return new class extends Migration
             $table->date('operations_date');
             $table->string('account_type');
             $table->string('operation_type');
-            $table->string('operation_amount')->default('0.00');
-            $table->string('commission_amount')->nullable()->default('0.00');
-            $table->string('amount_balance')->nullable()->default('0.00');
+            $table->double('operation_amount', 15, 2)->nullable()->default('0.00');
+            $table->double('commission_amount', 5, 2)->nullable()->default('0.00');
+            $table->double('amount_balance', 15, 2)->nullable()->default('0.00');
             $table->string('currency')->default('USD');
             $table->string('status')->nullable()->default('success');
             $table->string('created_by')->default('Admin');

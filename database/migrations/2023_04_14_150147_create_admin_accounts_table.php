@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('identity_number');
             $table->date('operations_date');
-            $table->string('commission_amount')->nullable()->default('0.00');
-            $table->string('current_balance')->nullable()->default('0.00');
+            $table->double('commission_amount', 5, 2)->nullable()->default('0.00');
+            $table->double('current_balance', 15, 2)->nullable()->default('0.00');
             $table->string('currency')->default('USD');
             $table->string('created_by')->default('Admin');
             $table->timestamps();
