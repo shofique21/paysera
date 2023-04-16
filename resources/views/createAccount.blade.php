@@ -5,9 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Create Accounts') }}</div>
                 <div class="card-body">
-                    <h3>Create Accounts</h3>
                     <form method="POST" action="{{ route('accounts.store') }}">
                         @csrf
                         <div class="row mb-3">
@@ -144,7 +143,7 @@
                             <label for="profession" class="col-md-4 col-form-label text-md-end">{{ __('Account Type') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="account_type" id="account_type" required>
+                                <select class="form-select" name="account_type" id="account_type" required>
                                     @foreach($accountType as $type)
                                     <option value="{{$type->name}}">{{$type->name}}</option>
                                     @endforeach
@@ -173,7 +172,7 @@
                             <label for="currency" class="col-md-4 col-form-label text-md-end">{{ __('Currency') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="currency" id="currency" required>
+                                <select class="form-select" name="currency" id="currency" required>
                                     @foreach($currencies as $currency)
                                     <option value="{{$currency->name}}">{{$currency->name}}</option>
                                     @endforeach
