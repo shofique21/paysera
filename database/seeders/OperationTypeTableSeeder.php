@@ -15,10 +15,12 @@ class OperationTypeTableSeeder extends Seeder
     {
         OperationType::create([
             'name' => 'deposit',
+            'description' => 'Transaction Deposit Account',
         ]);
         OperationType::create(
             [
                 'name' => 'withdraw',
+                'description' => 'Transaction withdraw Account',
             ]
         );
     }

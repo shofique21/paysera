@@ -24,17 +24,20 @@ class TransactionsImport implements ToModel, WithHeadingRow
             //calculations for commission
             
             $commission = $row['operation_amount'] * (3/1000);
-        } elseif($row['operation_type'] == 'withdraw' && $row['account_type'] == 'private'){
+            $currentBalance = $lastBalance + $row['operation_amount'] - $commission;
+
+        } elseif($row['operation_type'] == 'withdraw' && $row['account_type'] == 'private' && $lastBalance > $row['operation_amount']){
              //calculations for commission
 
             $commission = $row['operation_amount'] * (3/1000);
-        }elseif($row['operation_type'] == 'withdraw' && $row['account_type'] == 'business'){
+            $currentBalance = $lastBalance - $row['operation_amount'] - $commission;
+
+        }elseif($row['operation_type'] == 'withdraw' && $row['account_type'] == 'business' && $lastBalance > $row['operation_amount']){
              //calculations for commission
 
             $commission = $row['operation_amount'] * (5/1000);
+            $currentBalance = $lastBalance - $row['operation_amount'] - $commission;
         }
-
-         $currentBalance = $lastBalance - $commission;
 
          AccountUser::where('identity_number',$row['identity_number'])->update(['balance'=> $currentBalance]);
        

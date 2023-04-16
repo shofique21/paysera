@@ -21,11 +21,11 @@ return new class extends Migration
             $table->string('state');
             $table->string('postCode');
             $table->string('country');
-            $table->string('profession');
+            $table->string('profession')->nullable();
             $table->date('date_of_birth');
             $table->string('account_type');
-            $table->string('pinCode');
-            $table->string('balance')->default('0.00');
+            $table->string('pinCode')->nullable();
+            $table->double('balance', 15, 2)->default('0.00');
             $table->string('currency')->default('USD');
             $table->string('status')->default('Active');
             $table->string('created_by')->default('Admin');

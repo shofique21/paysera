@@ -34,7 +34,7 @@ class AccountController extends Controller
     {
         $data = $request->all();
         $data['pinCode'] = bcrypt($request->pinCode);
-        $data['identity_number'] = 5400 + AccountUser::latest()->first()->id;
+        $data['identity_number'] = 54000 + AccountUser::latest()->first()->id;
         $this->accountRepository->storeAccount($data);
         return redirect()->route('accounts.index')->with('success', 'Account Created Successfully');
     }
