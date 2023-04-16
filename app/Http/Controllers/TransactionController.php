@@ -8,6 +8,7 @@ use App\Models\Transaction;
 use App\Models\AccountUser;
 use App\Models\Currency;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class TransactionController extends Controller
 {
@@ -27,19 +28,26 @@ class TransactionController extends Controller
 
         $identityNo = $request->get('identity_number');
         $accountInfo = AccountUser::where('identity_number', $identityNo)->first();
+        $countTransaction = Transaction::where('identity_number', $identityNo)
+            ->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
         if ($request->operation_type == 'deposit') {
             //calculations for commission
-            $commission = $request->operation_amount * (3 / 1000);
+            $commission = round($request->operation_amount * (3 / 1000), 2);
             $currentBalance = $accountInfo->balance + $request->operation_amount - $commission;
         } elseif ($request->operation_type == 'withdraw' &&  $accountInfo->account_type == 'private' && $accountInfo->balance > $request->operation_amount) {
 
             //calculations for commission
-            $commission = $request->operation_amount * (3 / 1000);
+            if ($countTransaction > 3) {
+                $commission = round($request->operation_amount * (3 / 1000), 2);
+            } else {
+                $commission = 0;
+            }
+
             $currentBalance = $accountInfo->balance - $request->operation_amount - $commission;
         } elseif ($request->operation_type == 'withdraw' && $accountInfo->account_type == 'business' && $accountInfo->balance > $request->operation_amount) {
 
             //calculations for commission
-            $commission = $request->operation_amount * (5 / 1000);
+            $commission = round($request->operation_amount * (5 / 1000), 2);
             $currentBalance = $accountInfo->balance - $request->operation_amount - $commission;
         }
 
