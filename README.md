@@ -6,7 +6,7 @@
 <br/>copy .env.example and paste in .env
 <br/>create MySQL database:paysera
 <br/>composer update
-<br/> if not update any problem php.ini then run composer update --ignore-platform-req=ext-gd
+<br/> if not composer update for any problem php.ini then command: composer update --ignore-platform-req=ext-gd
 <br/>php artisan key:generate
 <br/>npm install
 <br/>php artisan serve
