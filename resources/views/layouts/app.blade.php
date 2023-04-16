@@ -61,7 +61,7 @@
                                     <a class="nav-link" href="{{ route('accounts.create') }}">{{ __('Create Accounts') }}</a>
                         </li>
                         <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ __('Create Transaction') }}</a>
+                                    <a class="nav-link" href="{{route('createTransaction')}}">{{ __('Create Transaction') }}</a>
                         </li>
                         <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

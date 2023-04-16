@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Paysera') }}</div>
 
                 <div class="card-body">
-                    <h1>All Business Accounts</h1>
+                    <h3>All Business Accounts</h3>
                     <table class="table table-striped">
                         <thead>
                             <tr>

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}
+                <div class="card-header">{{ __('Paysera') }}
                     <form action="{{ route('transactions.import') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="file" class="form-control">
@@ -20,7 +20,7 @@
                         {{ session('success') }}
                     </div>
                     @endif
-                    <h1>All Deposit Transaction</h1>
+                    <h3>All Deposit Transaction</h3>
                     <table class="table table-striped">
                         <thead>
                             <tr>
