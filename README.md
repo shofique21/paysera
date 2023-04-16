@@ -1,4 +1,5 @@
 
+# paysera
 <h3>Please run mysql and appache and Follow the command</h3>
 <br/>git clone https://github.com/shofique21/paysera.git
 <br/>create .env file in root folder
@@ -33,4 +34,4 @@
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# paysera
+
