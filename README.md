@@ -11,12 +11,13 @@ git clone https://github.com/shofique21/paysera.git
 <br/>php artisan migrate
 <br/>php artisan db:seed
 
+<br/>composer dump-autoload
 <br/>php artisan optimize
 <br/>php artisan cache:clear
 <br/>php artisan route:cache
 <br/>php artisan route:clear
 <br/>php artisan config:clear
-URL:: http://127.0.0.1:8000/
+<br/>URL:: http://127.0.0.1:8000/
 <br/>login credential
 <br/>email:admin@paysera.com
 <br/>password:Admin123
